@@ -5,3 +5,14 @@ plugins {
     alias(libs.plugins.daggerHiltAndroidPlugin) apply false
     alias(libs.plugins.jetbrainskotlinkapt) apply false
 }
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(libs.googleGradleSecret)
+    }
+}
