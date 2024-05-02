@@ -44,6 +44,7 @@ squareup-okhttp-interceptor = { group = "com.squareup.okhttp3", name = "logging-
 squareup-okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver" }
 squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 squareup-moshi = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+squareup-moshi-converter = {group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit"}
 squareup-leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "canary" }
 io-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
 googleGradleSecret = { group = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", name = "secrets-gradle-plugin", version.ref = "gradleSecretPlugin" }
