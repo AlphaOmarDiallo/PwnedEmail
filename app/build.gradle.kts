@@ -52,6 +52,11 @@ android {
             excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
+
+    secrets {
+        propertiesFileName = "secrets.properties"
+        defaultPropertiesFileName = "local.defaults.properties"
+    }
 }
 
 dependencies {
