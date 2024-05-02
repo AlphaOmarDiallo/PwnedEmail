@@ -83,6 +83,7 @@ dependencies {
     implementation(libs.squareup.okhttp.interceptor)
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.moshi)
+    implementation(libs.squareup.moshi.converter)
     testImplementation(libs.squareup.okhttp.mockwebserver)
 
     implementation(libs.io.coil)
