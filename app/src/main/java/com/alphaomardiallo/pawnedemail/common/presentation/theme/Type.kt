@@ -1,4 +1,4 @@
-package com.alphaomardiallo.pawnedemail.ui.theme
+package com.alphaomardiallo.pawnedemail.common.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

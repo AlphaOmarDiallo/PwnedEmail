@@ -1,4 +1,4 @@
-package com.alphaomardiallo.pawnedemail.ui.theme
+package com.alphaomardiallo.pawnedemail.common.presentation.theme
 
 import android.app.Activity
 import android.os.Build
