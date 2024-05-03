@@ -72,7 +72,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.dagger.hilt.android)
-    implementation(libs.dagger.hilt.compiler)
+    kapt(libs.dagger.hilt.compiler)
     testImplementation(libs.dagger.hilt.android.testing)
     testAnnotationProcessor(libs.dagger.hilt.compiler)
     androidTestImplementation(libs.dagger.hilt.android.testing)
