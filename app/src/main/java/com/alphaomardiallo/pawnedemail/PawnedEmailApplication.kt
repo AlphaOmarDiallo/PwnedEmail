@@ -1,8 +1,10 @@
 package com.alphaomardiallo.pawnedemail
 
 import android.app.Application
+import com.squareup.leakcanary.core.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
+import timber.log.Timber.Forest.plant
 
 @HiltAndroidApp
 class PawnedEmailApplication: Application() {
@@ -11,7 +13,7 @@ class PawnedEmailApplication: Application() {
         super.onCreate()
 
         if (BuildConfig.DEBUG){
-            Timber.plant(Timber.DebugTree())
+            plant(Timber.DebugTree())
         }
     }
 }

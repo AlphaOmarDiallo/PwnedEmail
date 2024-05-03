@@ -2,7 +2,10 @@ package com.alphaomardiallo.pawnedemail.common.di
 
 import com.alphaomardiallo.pawnedemail.BuildConfig
 import com.alphaomardiallo.pawnedemail.common.data.util.RetrofitResultCallAdapterFactory
-import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.GetAllBreachesHIBPApi
+import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.api.GetAllBreachesHIBPApi
+import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.datasource.AllBreachesDataSource
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +17,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.create
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -28,15 +30,27 @@ class AppModule {
     @Singleton
     fun provideGetAllBreachesHIBPAPI(@Named(STANDARD_CLIENT) client: OkHttpClient): GetAllBreachesHIBPApi {
 
+        val moshi = Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
+
         return Retrofit.Builder()
             .baseUrl(HIPB_BASE_URL)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(RetrofitResultCallAdapterFactory())
             .client(client)
             .build()
-            .create()
+            .create(GetAllBreachesHIBPApi::class.java)
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // DATA SOURCE
+    ///////////////////////////////////////////////////////////////////////////
+
+    @Provides
+    @Singleton
+    fun provideGetAllBreachesDataSource(api: GetAllBreachesHIBPApi): AllBreachesDataSource =
+        AllBreachesDataSource(api)
 
     ///////////////////////////////////////////////////////////////////////////
     // HTTP CLIENT
@@ -47,7 +61,6 @@ class AppModule {
     @Named(STANDARD_CLIENT)
     fun provideStandardHIBPHttpClient(): OkHttpClient {
         return OkHttpClient.Builder().apply {
-
             addInterceptor(Interceptor { chain ->
                 val originalRequest = chain.request().newBuilder()
 
