@@ -78,6 +78,10 @@ dependencies {
     androidTestImplementation(libs.dagger.hilt.android.testing)
     androidTestAnnotationProcessor(libs.dagger.hilt.compiler)
 
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation.compose)
+    androidTestImplementation(libs.navigation.testing)
+
     implementation(platform(libs.squareup.okhttp.bom))
     implementation(libs.squareup.okhttp)
     implementation(libs.squareup.okhttp.interceptor)

@@ -14,5 +14,6 @@ buildscript {
 
     dependencies {
         classpath(libs.googleGradleSecret)
+        classpath(libs.navigation)
     }
 }
