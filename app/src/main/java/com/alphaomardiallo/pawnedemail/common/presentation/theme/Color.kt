@@ -1,4 +1,4 @@
-package com.example.compose
+package com.alphaomardiallo.pawnedemail.common.presentation.theme
 import androidx.compose.ui.graphics.Color
 
 val primaryLight = Color(0xFF000000)

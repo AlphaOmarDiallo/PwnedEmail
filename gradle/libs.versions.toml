@@ -17,6 +17,7 @@ coil = "2.6.0"
 canary = "2.14"
 splashcreen = "1.0.1"
 gradleSecretPlugin = "2.0.1"
+navigation = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +49,10 @@ squareup-moshi-converter = {group = "com.squareup.retrofit2", name = "converter-
 squareup-leakcanary = { group = "com.squareup.leakcanary", name = "leakcanary-android", version.ref = "canary" }
 io-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
 googleGradleSecret = { group = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", name = "secrets-gradle-plugin", version.ref = "gradleSecretPlugin" }
+navigation = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation"}
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation"}
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
+navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

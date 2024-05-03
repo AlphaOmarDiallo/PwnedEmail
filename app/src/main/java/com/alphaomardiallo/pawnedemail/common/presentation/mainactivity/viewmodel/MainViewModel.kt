@@ -1,8 +1,9 @@
-package com.alphaomardiallo.pawnedemail.common.presentation
+package com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.viewmodel
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.alphaomardiallo.pawnedemail.common.domain.navigator.AppNavigator
 import com.alphaomardiallo.pawnedemail.common.domain.util.ResponseD
+import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.GetAllBreachesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -12,8 +13,15 @@ import timber.log.Timber
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
+    appNavigator: AppNavigator,
     private val getAllBreachesUseCase: GetAllBreachesUseCase,
-) : ViewModel() {
+) : BaseViewModel() {
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Data
+    ///////////////////////////////////////////////////////////////////////////
+
+    val navigationChannel = appNavigator.navigationChannel
 
     fun getBreaches() {
         getAllBreachesUseCase.invoke("alphaomar.diallo@gmail.com").onEach { result ->

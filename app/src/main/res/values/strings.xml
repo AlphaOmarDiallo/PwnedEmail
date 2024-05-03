@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Pawned Email</string>
+
+    <!-- Home screen destination -->
+    <string name="destination_home_screen">Home screen</string>
 </resources>
