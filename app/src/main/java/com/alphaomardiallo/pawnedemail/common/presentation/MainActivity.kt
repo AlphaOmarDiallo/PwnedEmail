@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         setContent {
             PawnedEmailTheme {
                 // A surface container using the 'background' color from the theme
@@ -44,7 +44,7 @@ fun Greeting(name: String, clickAction: () -> Unit, modifier: Modifier = Modifie
             text = "Hello $name!",
             modifier = modifier
         )
-        Button(onClick = { clickAction.invoke()}) {
+        Button(onClick = { clickAction.invoke() }) {
             Text(text = "Search")
         }
     }
