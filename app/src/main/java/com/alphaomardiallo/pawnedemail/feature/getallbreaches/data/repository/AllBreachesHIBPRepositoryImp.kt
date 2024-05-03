@@ -8,7 +8,7 @@ import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.repository.
 import javax.inject.Inject
 
 class AllBreachesHIBPRepositoryImp @Inject constructor(
-    private val remoteDataSource: AllBreachesDataSource
+    private val remoteDataSource: AllBreachesDataSource,
 ) : AllBreachesHIBPRepository {
 
     override suspend fun getAllBreachesHIBP(email: String): DataResponse<List<AllBreaches>> {

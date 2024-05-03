@@ -54,6 +54,7 @@ class RetrofitResultCall<T>(private val delegate: Call<T>) : Call<ApiResponse<T>
                                 throwable.code(),
                                 throwable.response()?.errorBody()
                             )
+
                             else -> ApiResponse.ApiException(ErrorEntity.Unknown)
                         }
                     )

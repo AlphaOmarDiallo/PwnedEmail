@@ -7,12 +7,12 @@ import timber.log.Timber
 import timber.log.Timber.Forest.plant
 
 @HiltAndroidApp
-class PawnedEmailApplication: Application() {
+class PawnedEmailApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
-        if (BuildConfig.DEBUG){
+        if (BuildConfig.DEBUG) {
             plant(Timber.DebugTree())
         }
     }
