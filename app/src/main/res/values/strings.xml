@@ -4,6 +4,9 @@
     <!-- Home screen destination -->
     <string name="destination_home_screen">Home screen</string>
 
+    <!-- App intro composable -->
+    <string name="intro_title">Check if your email has been in a data breach</string>
+
     <!-- Get all breaches composable -->
     <string name="email_label">Email</string>
     <string name="email_supporting_text_invalid">Invalid email. Check syntax.</string>
