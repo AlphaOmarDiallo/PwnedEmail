@@ -1,9 +1,11 @@
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.daggerHiltAndroidPlugin)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     alias(libs.plugins.jetbrainskotlinkapt)
+    //alias(libs.plugins.kspPlugin)
 }
 
 android {
@@ -18,6 +20,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "com.alphaomardiallo.pawnedemail.PawnedEmailTestRunner"
+
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -96,6 +99,16 @@ dependencies {
 
     implementation(libs.jakewharthon.timber)
 
+    implementation(libs.room)
+    implementation(libs.room.ktx)
+    implementation(libs.room.compiler) {
+        exclude(group = "com.intellij", module = "annotations")
+    }
+    kapt(libs.room.compiler)
+    testImplementation(libs.room.testing)
+
+    implementation(libs.gson)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -104,4 +117,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.squareup.leakcanary)
+}
+
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
 }
