@@ -1,14 +1,15 @@
 [versions]
 agp = "8.3.2"
 kotlin = "1.9.0"
-coreKtx = "1.13.0"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.9.0"
-composeBom = "2024.04.01"
+composeBom = "2024.05.00"
 hilt = "2.50"
+hiltCompose = "1.2.0"
 timber = "5.0.1"
 okhttp = "4.12.0"
 retrofit = "2.11.0"
@@ -18,6 +19,7 @@ canary = "2.14"
 splashcreen = "1.0.1"
 gradleSecretPlugin = "2.0.1"
 navigation = "2.7.7"
+composeLifecycle = "2.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +40,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 dagger-hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+dagger-hilt-nav-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltCompose" }
 jakewharthon-timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 squareup-okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp" }
 squareup-okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
@@ -53,6 +56,7 @@ navigation = { group = "androidx.navigation", name = "navigation-safe-args-gradl
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation"}
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
 navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation"}
+compose-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "composeLifecycle"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

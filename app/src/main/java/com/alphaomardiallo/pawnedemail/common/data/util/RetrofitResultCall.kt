@@ -10,6 +10,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 
 class RetrofitResultCall<T>(private val delegate: Call<T>) : Call<ApiResponse<T>> {
+
     override fun clone(): Call<ApiResponse<T>> {
         return RetrofitResultCall(delegate.clone())
     }
@@ -27,8 +28,8 @@ class RetrofitResultCall<T>(private val delegate: Call<T>) : Call<ApiResponse<T>
                     callback.onResponse(
                         this@RetrofitResultCall,
                         Response.success(
-                            /* code = */ response.code(),
-                            /* body = */ ApiResponse.ApiSuccess(body)
+                            response.code(),
+                            ApiResponse.ApiSuccess(internalData = body)
                         )
                     )
                 } else {
