@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
 import com.alphaomardiallo.pawnedemail.common.data.local.entity.BreachesEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BreachesDao {
@@ -13,4 +14,7 @@ interface BreachesDao {
 
     @Query("DELETE FROM breaches_table")
     fun nukeBreachesTable()
+
+    @Query("SELECT * FROM breaches_table")
+    fun getAllBreaches(): Flow<List<BreachesEntity>>
 }
