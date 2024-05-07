@@ -21,5 +21,23 @@ data class Breaches(
     val isMalware: Boolean,
     val isSubscriptionFree: Boolean,
 ) {
-    fun toBreachesUi() = BreachesUi(name = this.name)
+    fun toBreachesUi() = BreachesUi(
+        name = this.name,
+        title = this.title,
+        domain = this.domain,
+        breachDate = this.breachDate,
+        addedDate = this.addedDate,
+        modifiedDate = this.modifiedDate,
+        pwnCount = this.pwnCount,
+        description = this.description,
+        logoPath = this.description,
+        dataClasses = this.dataClasses,
+        isVerified = this.isVerified,
+        isFabricated = this.isFabricated,
+        isSensitive = this.isSensitive,
+        isRetired = this.isRetired,
+        isSpamList = this.isSpamList,
+        isMalware = this.isMalware,
+        isSubscriptionFree = this.isSubscriptionFree,
+    )
 }

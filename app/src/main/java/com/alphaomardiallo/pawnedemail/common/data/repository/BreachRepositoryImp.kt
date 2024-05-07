@@ -21,4 +21,8 @@ class BreachRepositoryImp @Inject constructor(
     override suspend fun getAllBreaches(): Flow<List<BreachesEntity>> {
         return breachesDao.getAllBreaches()
     }
+
+    override suspend fun getCount(): Flow<Int> {
+        return breachesDao.getCount()
+    }
 }

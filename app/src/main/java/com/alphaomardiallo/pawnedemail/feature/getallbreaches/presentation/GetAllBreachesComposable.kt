@@ -85,7 +85,8 @@ private fun EmailSearchComposable(
                     },
                     color = MaterialTheme.colorScheme.error
                 )
-            }
+            },
+            maxLines = 1,
         )
 
         if (!isLoading) {

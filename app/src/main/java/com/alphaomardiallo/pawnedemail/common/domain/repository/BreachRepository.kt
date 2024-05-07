@@ -10,4 +10,6 @@ interface BreachRepository {
     fun deleteAllBreaches()
 
     suspend fun getAllBreaches(): Flow<List<BreachesEntity>>
+
+    suspend fun getCount(): Flow<Int>
 }

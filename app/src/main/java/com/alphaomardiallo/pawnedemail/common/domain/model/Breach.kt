@@ -1,8 +1,8 @@
-package com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation.model
+package com.alphaomardiallo.pawnedemail.common.domain.model
 
-import com.alphaomardiallo.pawnedemail.common.domain.model.Breach
+import com.alphaomardiallo.pawnedemail.common.data.local.entity.BreachesEntity
 
-data class BreachesUi(
+data class Breach(
     val name: String,
     val title: String,
     val domain: String,
@@ -21,7 +21,7 @@ data class BreachesUi(
     val isMalware: Boolean,
     val isSubscriptionFree: Boolean,
 ) {
-    fun toBreach() = Breach(
+    fun toBreachEntity() = BreachesEntity(
         name = this.name,
         title = this.title,
         domain = this.domain,
