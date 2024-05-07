@@ -1,9 +1,13 @@
 package com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation
 
 import androidx.lifecycle.viewModelScope
+import com.alphaomardiallo.pawnedemail.common.domain.model.Breach
+import com.alphaomardiallo.pawnedemail.common.domain.model.Email
 import com.alphaomardiallo.pawnedemail.common.domain.util.ResponseD
 import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.GetAllBreachesUseCase
+import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.SaveBreachesUseCase
+import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.SaveEmailUseCase
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation.model.GetAlBreachesUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -12,10 +16,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 @HiltViewModel
 class GetAllBreachesViewModel @Inject constructor(
     private val getAllBreachesUseCase: GetAllBreachesUseCase,
+    private val saveBreachesUseCase: SaveBreachesUseCase,
+    private val saveEmailUseCase: SaveEmailUseCase,
 ) : BaseViewModel() {
 
     ///////////////////////////////////////////////////////////////////////////
@@ -35,10 +42,33 @@ class GetAllBreachesViewModel @Inject constructor(
                 is ResponseD.Error -> _uiState.update { state -> state.copy(isLoading = false) }
                 is ResponseD.Loading -> _uiState.update { state -> state.copy(isLoading = true) }
                 is ResponseD.Success -> _uiState.update { state ->
+
+                    saveEmail(Email(email = email))
+
                     val breachList = result.data ?: emptyList()
+                    breachList.map { breach ->
+                        saveBreach(breach.toBreach())
+                    }
+
                     state.copy(breaches = breachList, isLoading = true)
                 }
             }
         }.launchIn(viewModelScope)
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Private functions
+    ///////////////////////////////////////////////////////////////////////////
+
+    private fun saveBreach(breach: Breach) {
+        viewModelScope.launch {
+            saveBreachesUseCase.invoke(breach)
+        }
+    }
+
+    private fun saveEmail(email: Email) {
+        viewModelScope.launch {
+            saveEmailUseCase.invoke(email)
+        }
     }
 }

@@ -13,8 +13,8 @@ class AllBreachesHIBPRepositoryImp @Inject constructor(
 
     override suspend fun getAllBreachesHIBP(email: String): DataResponse<List<Breaches>> {
         return when (val result = remoteDataSource.getAllBreaches(email = email)) {
-            is ApiResult.Error -> DataResponse.Success(data = result.data)
-            is ApiResult.Success -> DataResponse.Error(error = result.error, data = result.data)
+            is ApiResult.Error -> DataResponse.Error(error = result.error, data = result.data)
+            is ApiResult.Success -> DataResponse.Success(data = result.data)
         }
     }
 }

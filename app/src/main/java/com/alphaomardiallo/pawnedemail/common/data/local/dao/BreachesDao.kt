@@ -17,4 +17,7 @@ interface BreachesDao {
 
     @Query("SELECT * FROM breaches_table")
     fun getAllBreaches(): Flow<List<BreachesEntity>>
+
+    @Query("SELECT COUNT(*) FROM breaches_table")
+    fun getCount(): Flow<Int>
 }
