@@ -32,31 +32,41 @@ private const val EMAIL_THRESHOLD = 2
 
 @Composable
 fun GetAllBreachesComposable() {
-
     val viewModel: GetAllBreachesViewModel = hiltViewModel()
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
 
     GetAllBreachesComposableContent(
+        email = uiState.value.email,
         breaches = viewModel::getBreaches,
+        isLoading = uiState.value.isLoading
     )
 }
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-private fun GetAllBreachesComposableContent(breaches: KFunction1<String, Unit>? = null) {
+private fun GetAllBreachesComposableContent(
+    email: String = "",
+    breaches: KFunction1<String, Unit>? = null,
+    isLoading: Boolean = false,
+) {
 
     Card(modifier = Modifier.fillMaxWidth()) {
-        EmailSearchComposable(checkEmail = breaches)
+        EmailSearchComposable(
+            email = email,
+            checkEmail = breaches,
+            isLoading = isLoading
+        )
     }
 }
 
 @Composable
 private fun EmailSearchComposable(
+    email: String = "",
     checkEmail: KFunction1<String, Unit>? = null,
     isLoading: Boolean = false,
 ) {
 
-    var textValueEmail by remember { mutableStateOf("") }
+    var textValueEmail by remember { mutableStateOf(email) }
 
     Column(
         modifier = Modifier

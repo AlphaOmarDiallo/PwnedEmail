@@ -7,7 +7,7 @@ interface BreachRepository {
 
     suspend fun upsertBreach(breach: BreachesEntity)
 
-    fun deleteAllBreaches()
+    suspend fun deleteAllBreaches()
 
     suspend fun getAllBreaches(): Flow<List<BreachesEntity>>
 
