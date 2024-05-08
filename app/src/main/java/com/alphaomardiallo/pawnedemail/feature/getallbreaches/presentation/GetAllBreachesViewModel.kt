@@ -48,6 +48,10 @@ class GetAllBreachesViewModel @Inject constructor(
         }
     }
 
+    fun updateEmailInUiState(email: String) {
+        _uiState.update { state -> state.copy(email = email) }
+    }
+
     fun getBreaches(email: String) {
         getAllBreachesUseCase.invoke(email = email).onEach { result ->
             when (result) {

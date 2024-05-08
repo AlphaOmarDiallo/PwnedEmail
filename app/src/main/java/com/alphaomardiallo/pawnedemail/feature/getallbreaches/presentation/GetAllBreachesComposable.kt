@@ -11,6 +11,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -38,7 +39,8 @@ fun GetAllBreachesComposable() {
     GetAllBreachesComposableContent(
         email = uiState.value.email,
         breaches = viewModel::getBreaches,
-        isLoading = uiState.value.isLoading
+        isLoading = uiState.value.isLoading,
+        updateEmail = viewModel::updateEmailInUiState
     )
 }
 
@@ -48,66 +50,60 @@ private fun GetAllBreachesComposableContent(
     email: String = "",
     breaches: KFunction1<String, Unit>? = null,
     isLoading: Boolean = false,
+    updateEmail: KFunction1<String, Unit>? = null,
 ) {
 
     Card(modifier = Modifier.fillMaxWidth()) {
-        EmailSearchComposable(
-            email = email,
-            checkEmail = breaches,
-            isLoading = isLoading
-        )
-    }
-}
+        var textValueEmail by remember { mutableStateOf("") }
 
-@Composable
-private fun EmailSearchComposable(
-    email: String = "",
-    checkEmail: KFunction1<String, Unit>? = null,
-    isLoading: Boolean = false,
-) {
-
-    var textValueEmail by remember { mutableStateOf(email) }
-
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(mediumPadding()),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        OutlinedTextField(
+        Column(
             modifier = Modifier
-                .padding(horizontal = mediumPadding())
-                .fillMaxWidth(),
-            value = textValueEmail,
-            onValueChange = { newEmail -> textValueEmail = newEmail },
-            label = { Text(text = stringResource(id = R.string.email_label)) },
-            supportingText = {
-                Text(
-                    text = if (textValueEmail.length > EMAIL_THRESHOLD && !EmailValidator.isValidEmail(
-                            textValueEmail
-                        )
-                    ) {
-                        stringResource(id = R.string.email_supporting_text_invalid)
-                    } else {
-                        ""
-                    },
-                    color = MaterialTheme.colorScheme.error
-                )
-            },
-            maxLines = 1,
-        )
+                .fillMaxWidth()
+                .padding(mediumPadding()),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
 
-        if (!isLoading) {
-            Button(
-                onClick = { checkEmail?.invoke(textValueEmail.toLowerCase(locale = Locale.current)) },
-                enabled = EmailValidator.isValidEmail(textValueEmail)
-            ) {
-                Text(text = stringResource(id = R.string.check_button))
+            OutlinedTextField(
+                modifier = Modifier
+                    .padding(horizontal = mediumPadding())
+                    .fillMaxWidth(),
+                value = textValueEmail,
+                onValueChange = { newEmail ->
+                    textValueEmail = newEmail
+                    updateEmail?.invoke(textValueEmail)
+                },
+                label = { Text(text = stringResource(id = R.string.email_label)) },
+                supportingText = {
+                    Text(
+                        text = if (textValueEmail.length > EMAIL_THRESHOLD && !EmailValidator.isValidEmail(
+                                textValueEmail
+                            )
+                        ) {
+                            stringResource(id = R.string.email_supporting_text_invalid)
+                        } else {
+                            ""
+                        },
+                        color = MaterialTheme.colorScheme.error
+                    )
+                },
+                maxLines = 1,
+            )
+
+            if (!isLoading) {
+                Button(
+                    onClick = { breaches?.invoke(textValueEmail.toLowerCase(locale = Locale.current)) },
+                    enabled = EmailValidator.isValidEmail(textValueEmail)
+                ) {
+                    Text(text = stringResource(id = R.string.check_button))
+                }
+            } else {
+                CircularProgressIndicator()
             }
-        } else {
-            CircularProgressIndicator()
+
+            LaunchedEffect(key1 = Unit) {
+                textValueEmail = email
+            }
         }
     }
 }

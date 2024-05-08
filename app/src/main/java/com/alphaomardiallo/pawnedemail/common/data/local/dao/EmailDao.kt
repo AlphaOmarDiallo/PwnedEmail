@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
 import com.alphaomardiallo.pawnedemail.common.data.local.entity.EmailEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EmailDao {
@@ -12,5 +13,5 @@ interface EmailDao {
     suspend fun upsertEmail(email: EmailEntity)
 
     @Query("SELECT * FROM email_table LIMIT 1")
-    suspend fun getFirstEmail(): EmailEntity?
+    fun getFirstEmail(): Flow<EmailEntity?>
 }
