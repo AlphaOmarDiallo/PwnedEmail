@@ -7,5 +7,5 @@ class DeleteAllBreachesUseCase @Inject constructor(
     private val breachRepository: BreachRepository,
 ) {
 
-    fun invoke() = breachRepository.deleteAllBreaches()
+    suspend fun invoke() = breachRepository.deleteAllBreaches()
 }

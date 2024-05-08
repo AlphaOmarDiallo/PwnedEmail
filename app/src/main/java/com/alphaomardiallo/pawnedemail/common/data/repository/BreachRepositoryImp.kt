@@ -14,7 +14,7 @@ class BreachRepositoryImp @Inject constructor(
         breachesDao.upsertBreach(breach)
     }
 
-    override fun deleteAllBreaches() {
+    override suspend fun deleteAllBreaches() {
         breachesDao.nukeBreachesTable()
     }
 

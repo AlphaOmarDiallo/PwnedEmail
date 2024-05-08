@@ -2,5 +2,6 @@ package com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation.mode
 
 data class GetAlBreachesUiState(
     val breaches: List<BreachesUi> = emptyList(),
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
+    val email: String = "",
 )
