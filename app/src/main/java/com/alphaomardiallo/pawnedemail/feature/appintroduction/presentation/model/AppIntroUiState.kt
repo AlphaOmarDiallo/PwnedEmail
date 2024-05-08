@@ -2,4 +2,5 @@ package com.alphaomardiallo.pawnedemail.feature.appintroduction.presentation.mod
 
 data class AppIntroUiState(
     val breachNumber: Int = 0,
+    val email: String? = null,
 )

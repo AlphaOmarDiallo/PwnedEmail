@@ -13,7 +13,5 @@ class EmailRepositoryImp @Inject constructor(
         emailDao.upsertEmail(email)
     }
 
-    override suspend fun getFirstEmail(): EmailEntity? {
-        return emailDao.getFirstEmail()
-    }
+    override suspend fun getFirstEmail() = emailDao.getFirstEmail()
 }

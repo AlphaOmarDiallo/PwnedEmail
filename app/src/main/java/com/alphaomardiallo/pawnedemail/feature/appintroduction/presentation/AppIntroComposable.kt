@@ -20,17 +20,19 @@ fun AppIntroComposable() {
     val viewModel: AppIntroViewModel = hiltViewModel()
     val uiState = viewModel.uiState.collectAsStateWithLifecycle()
 
-    AppIntroComposableContent(breachNumber = uiState.value.breachNumber)
+    AppIntroComposableContent(
+        breachNumber = uiState.value.breachNumber,
+        viewModel = viewModel
+    )
 }
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-private fun AppIntroComposableContent(breachNumber: Int = 2) {
-
-    val text = if (breachNumber == 0) {
-        stringResource(id = R.string.intro_title)
+private fun AppIntroComposableContent(breachNumber: Int = 2, viewModel: AppIntroViewModel? = null) {
+    val text = if (false) {
+        String.format(stringResource(id = R.string.intro_title_breaches), "alpha", breachNumber)
     } else {
-        String.format(stringResource(id = R.string.intro_title_breaches), breachNumber)
+        stringResource(id = R.string.intro_title)
     }
 
     Text(

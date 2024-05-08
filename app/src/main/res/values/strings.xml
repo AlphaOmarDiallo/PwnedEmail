@@ -6,10 +6,10 @@
 
     <!-- App intro composable -->
     <string name="intro_title">Check if your email has been in a data breach</string>
-    <string name="intro_title_breaches">Your email has been involved in %d breaches</string>
+    <string name="intro_title_breaches">%s has been involved in %d breaches</string>
 
     <!-- Get all breaches composable -->
     <string name="email_label">Email</string>
     <string name="email_supporting_text_invalid">Invalid email. Check syntax.</string>
-    <string name="check_button">Check</string>
+    <string name="check_button">Pawnd?</string>
 </resources>
