@@ -43,7 +43,7 @@ private fun AppIntroComposableContent() {
 
         AsyncImage(
             model = R.drawable.safa_data_img,
-            contentDescription = stringResource(id = R.string.image_content_description),
+            contentDescription = stringResource(id = R.string.image_home_content_description),
         )
 
         Text(

@@ -6,9 +6,9 @@ import com.alphaomardiallo.pawnedemail.common.data.repository.BreachRepositoryIm
 import com.alphaomardiallo.pawnedemail.common.data.repository.EmailRepositoryImp
 import com.alphaomardiallo.pawnedemail.common.domain.repository.BreachRepository
 import com.alphaomardiallo.pawnedemail.common.domain.repository.EmailRepository
-import com.alphaomardiallo.pawnedemail.feature.allbreaches.data.remote.datasource.AllBreachesRegisteredDataSource
-import com.alphaomardiallo.pawnedemail.feature.allbreaches.data.repository.AllBreachesRegisteredRepositoryImp
-import com.alphaomardiallo.pawnedemail.feature.allbreaches.domain.repository.AllBreachesRegisteredRepository
+import com.alphaomardiallo.pawnedemail.feature.breachesregistered.data.remote.datasource.AllBreachesRegisteredDataSource
+import com.alphaomardiallo.pawnedemail.feature.breachesregistered.data.repository.AllBreachesRegisteredRepositoryImp
+import com.alphaomardiallo.pawnedemail.feature.breachesregistered.domain.repository.AllBreachesRegisteredRepository
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.datasource.AllBreachesDataSource
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.repository.AllBreachesHIBPRepositoryImp
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.repository.AllBreachesHIBPRepository

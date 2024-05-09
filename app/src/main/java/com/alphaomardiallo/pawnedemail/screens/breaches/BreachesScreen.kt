@@ -1,12 +1,20 @@
 package com.alphaomardiallo.pawnedemail.screens.breaches
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import com.alphaomardiallo.pawnedemail.feature.allbreaches.presentation.AllBreachesComposable
+import androidx.compose.ui.Modifier
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.largePadding
+import com.alphaomardiallo.pawnedemail.feature.breachesregistered.presentation.AllBreachesComposable
 
 @Composable
 fun BreachesScreen() {
-    Text(text = "BREACHESSSSSSSSSS")
-
-    AllBreachesComposable()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(largePadding())
+    ) {
+        AllBreachesComposable()
+    }
 }
