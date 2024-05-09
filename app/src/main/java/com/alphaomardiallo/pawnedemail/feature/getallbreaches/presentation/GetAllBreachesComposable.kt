@@ -53,7 +53,11 @@ private fun GetAllBreachesComposableContent(
     updateEmail: KFunction1<String, Unit>? = null,
 ) {
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = mediumPadding())
+    ) {
         var textValueEmail by remember { mutableStateOf("") }
 
         Column(
