@@ -2,6 +2,7 @@ package com.alphaomardiallo.pawnedemail.common.di
 
 import com.alphaomardiallo.pawnedemail.BuildConfig
 import com.alphaomardiallo.pawnedemail.common.data.util.RetrofitResultCallAdapterFactory
+import com.alphaomardiallo.pawnedemail.feature.allbreaches.data.remote.api.GetAllBreachesRegisteredApi
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.api.GetAllBreachesHIBPApi
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.datasource.AllBreachesDataSource
 import com.squareup.moshi.Moshi
@@ -41,6 +42,23 @@ class AppModule {
             .client(client)
             .build()
             .create(GetAllBreachesHIBPApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetAllBreachesRegistered(@Named(STANDARD_CLIENT) client: OkHttpClient): GetAllBreachesRegisteredApi {
+
+        val moshi = Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
+
+        return Retrofit.Builder()
+            .baseUrl(HIPB_BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addCallAdapterFactory(RetrofitResultCallAdapterFactory())
+            .client(client)
+            .build()
+            .create(GetAllBreachesRegisteredApi::class.java)
     }
 
     ///////////////////////////////////////////////////////////////////////////
