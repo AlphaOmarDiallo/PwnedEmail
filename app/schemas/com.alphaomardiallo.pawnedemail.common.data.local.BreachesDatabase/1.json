@@ -1,0 +1,162 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "04dd867be31e1b5f8081ec4a3a27a853",
+    "entities": [
+      {
+        "tableName": "breaches_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`breaches_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `breaches_name` TEXT NOT NULL, `breaches_title` TEXT NOT NULL, `breaches_domain` TEXT NOT NULL, `breaches_breach_date` TEXT NOT NULL, `breaches_added_date` TEXT NOT NULL, `breaches_modified_date` TEXT NOT NULL, `breaches_pwn_count` INTEGER NOT NULL, `breaches_description` TEXT NOT NULL, `breaches_logo_path` TEXT NOT NULL, `breaches_data_classes` TEXT NOT NULL, `breaches_is_verified` INTEGER NOT NULL, `breaches_is_fabricated` INTEGER NOT NULL, `breaches_is_sensitive` INTEGER NOT NULL, `breaches_is_retired` INTEGER NOT NULL, `breaches_is_spam_list` INTEGER NOT NULL, `breaches_is_malware` INTEGER NOT NULL, `breaches_is_subscription_free` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "breaches_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "breaches_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "breaches_title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "domain",
+            "columnName": "breaches_domain",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breachDate",
+            "columnName": "breaches_breach_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addedDate",
+            "columnName": "breaches_added_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modifiedDate",
+            "columnName": "breaches_modified_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pwnCount",
+            "columnName": "breaches_pwn_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "breaches_description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "logoPath",
+            "columnName": "breaches_logo_path",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataClasses",
+            "columnName": "breaches_data_classes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVerified",
+            "columnName": "breaches_is_verified",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFabricated",
+            "columnName": "breaches_is_fabricated",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSensitive",
+            "columnName": "breaches_is_sensitive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isRetired",
+            "columnName": "breaches_is_retired",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSpamList",
+            "columnName": "breaches_is_spam_list",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isMalware",
+            "columnName": "breaches_is_malware",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSubscriptionFree",
+            "columnName": "breaches_is_subscription_free",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "breaches_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "email_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`email_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email_email` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "email_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email_email",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "email_id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '04dd867be31e1b5f8081ec4a3a27a853')"
+    ]
+  }
+}
