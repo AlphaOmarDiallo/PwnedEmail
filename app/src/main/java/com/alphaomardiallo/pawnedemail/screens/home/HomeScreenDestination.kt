@@ -1,4 +1,4 @@
-package com.alphaomardiallo.pawnedemail.screens
+package com.alphaomardiallo.pawnedemail.screens.home
 
 import androidx.annotation.StringRes
 import com.alphaomardiallo.pawnedemail.R

@@ -1,4 +1,4 @@
-package com.alphaomardiallo.pawnedemail.screens
+package com.alphaomardiallo.pawnedemail.screens.home
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable

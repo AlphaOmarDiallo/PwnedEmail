@@ -1,4 +1,4 @@
-package com.alphaomardiallo.pawnedemail.screens
+package com.alphaomardiallo.pawnedemail.screens.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

@@ -9,13 +9,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.alphaomardiallo.pawnedemail.R
-import com.alphaomardiallo.pawnedemail.common.presentation.theme.mediumPadding
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.smallPadding
 
 @Composable
 fun AppIntroComposable() {
@@ -42,18 +44,41 @@ private fun AppIntroComposableContent(breachNumber: Int = 2, viewModel: AppIntro
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        AsyncImage(
-            model = R.drawable.safa_data_img,
-            contentDescription = stringResource(id = R.string.image_content_description),
+        Text(
+            text = stringResource(id = R.string.intro_title),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = smallPadding()),
+            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.SemiBold),
         )
 
         Text(
-            text = text,
+            text = stringResource(id = R.string.intro_subtitle),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(mediumPadding()),
-            style = MaterialTheme.typography.titleMedium,
-            textAlign = TextAlign.Center
+                .padding(vertical = smallPadding()),
+            style = MaterialTheme.typography.titleLarge.copy(
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.secondary
+            ),
+            textAlign = TextAlign.Justify
+        )
+
+        Text(
+            text = stringResource(id = R.string.intro_definition),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = smallPadding()),
+            style = MaterialTheme.typography.labelSmall.copy(
+                color = MaterialTheme.colorScheme.tertiary,
+                fontStyle = FontStyle.Italic
+            ),
+            textAlign = TextAlign.Justify
+        )
+
+        AsyncImage(
+            model = R.drawable.safa_data_img,
+            contentDescription = stringResource(id = R.string.image_content_description),
         )
     }
 }
