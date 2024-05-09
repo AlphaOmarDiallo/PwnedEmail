@@ -15,7 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.composable.MainScaffold
+import com.alphaomardiallo.pawnedemail.common.presentation.composable.MainScaffold
 import com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.destination.BottomNavDestination
 import com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.destination.NavigationEffects
 import com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.viewmodel.MainViewModel

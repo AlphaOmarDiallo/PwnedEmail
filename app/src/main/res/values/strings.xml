@@ -14,7 +14,7 @@
     <string name="intro_subtitle">Check if your email has been in a data breach</string>
     <string name="intro_definition">def: To be Pwned ("owned") is to have been the victim of a data breach</string>
     <string name="intro_title_breaches">%s has been involved in %d breaches</string>
-    <string name="image_content_description">Illustration of a person holding a padlock, with representation of user data in web windows in the background. Image from https://undraw.co/illustrations.</string>
+    <string name="image_home_content_description">Illustration of a person holding a padlock, with representation of user data in web windows in the background. Image from https://undraw.co/illustrations.</string>
 
     <!-- Get all breaches composable -->
     <string name="email_label">Email</string>
@@ -33,5 +33,10 @@
     <string name="description">Description</string>
     <string name="date">Date: </string>
     <string name="logo_description">Logo of domain affected</string>
+
+    <!-- All registered breaches -->
+    <string name="loading">Loading</string>
+    <string name="count">Pwned count: %d</string>
+    <string name="image_loading_content_description">Illustration of a person next to a giant smartphone loading data. Image from https://undraw.co/illustrations.</string>
 
 </resources>

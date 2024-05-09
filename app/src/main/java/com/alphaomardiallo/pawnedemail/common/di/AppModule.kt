@@ -2,7 +2,7 @@ package com.alphaomardiallo.pawnedemail.common.di
 
 import com.alphaomardiallo.pawnedemail.BuildConfig
 import com.alphaomardiallo.pawnedemail.common.data.util.RetrofitResultCallAdapterFactory
-import com.alphaomardiallo.pawnedemail.feature.allbreaches.data.remote.api.GetAllBreachesRegisteredApi
+import com.alphaomardiallo.pawnedemail.feature.breachesregistered.data.remote.api.GetAllBreachesRegisteredApi
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.api.GetAllBreachesHIBPApi
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.remote.datasource.AllBreachesDataSource
 import com.squareup.moshi.Moshi
