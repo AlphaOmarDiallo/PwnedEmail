@@ -1,7 +1,6 @@
 package com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.composable
 
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
@@ -23,7 +22,6 @@ fun MainBottomBar(
     if (isNavigationBarVisible) {
         NavigationBar(
             modifier = modifier,
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
         ) {
             items.forEachIndexed { index, destination ->
                 if (destination.route == currentRoute) {
