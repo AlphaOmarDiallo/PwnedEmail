@@ -19,3 +19,63 @@ data class BreachListUi(
     val isMalware: Boolean,
     val isSubscriptionFree: Boolean,
 )
+
+fun mockBreachListObjectList() = listOf(
+    BreachListUi(
+        name = "Kenny Cunningham",
+        title = "instructior",
+        domain = "duo",
+        breachDate = "ad",
+        addedDate = "dolores",
+        modifiedDate = "nisi",
+        pwnCount = 2909,
+        description = "ut",
+        logoPath = "appetere",
+        dataClasses = listOf(),
+        isVerified = false,
+        isFabricated = false,
+        isSensitive = false,
+        isRetired = false,
+        isSpamList = false,
+        isMalware = false,
+        isSubscriptionFree = false
+    ),
+    BreachListUi(
+        name = "Kenny Cunningham",
+        title = "instructior",
+        domain = "duo",
+        breachDate = "ad",
+        addedDate = "dolores",
+        modifiedDate = "nisi",
+        pwnCount = 2909,
+        description = "ut",
+        logoPath = "appetere",
+        dataClasses = listOf(),
+        isVerified = false,
+        isFabricated = false,
+        isSensitive = false,
+        isRetired = false,
+        isSpamList = false,
+        isMalware = false,
+        isSubscriptionFree = false
+    ),
+    BreachListUi(
+        name = "Kenny Cunningham",
+        title = "instructior",
+        domain = "duo",
+        breachDate = "ad",
+        addedDate = "dolores",
+        modifiedDate = "nisi",
+        pwnCount = 2909,
+        description = "ut",
+        logoPath = "appetere",
+        dataClasses = listOf(),
+        isVerified = false,
+        isFabricated = false,
+        isSensitive = false,
+        isRetired = false,
+        isSpamList = false,
+        isMalware = false,
+        isSubscriptionFree = false
+    )
+)

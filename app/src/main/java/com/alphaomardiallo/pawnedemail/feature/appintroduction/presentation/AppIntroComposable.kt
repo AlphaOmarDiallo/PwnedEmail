@@ -30,14 +30,6 @@ private fun AppIntroComposableContent() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(id = R.string.intro_title),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = smallPadding()),
-            style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.SemiBold),
-        )
-
-        Text(
             text = stringResource(id = R.string.intro_subtitle),
             modifier = Modifier
                 .fillMaxWidth()

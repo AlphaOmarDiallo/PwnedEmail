@@ -21,16 +21,23 @@ fun MainScaffold(
 ) {
 
     var showNavigationBar by rememberSaveable { mutableStateOf(false) }
+    var showAppBar by rememberSaveable { mutableStateOf(false) }
     var selectedBarItem by rememberSaveable { mutableIntStateOf(0) }
     var currentRoute by rememberSaveable { mutableStateOf(BottomNavDestination.Home.route) }
 
     navBackStackEntry?.destination?.route?.let { route ->
-        showNavigationBar = when (route) {
-            else -> true
+        when (route) {
+            else -> {
+                showAppBar = true
+                showNavigationBar = true
+            }
         }
     }
 
     Scaffold(
+        topBar = {
+            MainAppBar()
+        },
         bottomBar = {
             MainBottomBar(
                 isNavigationBarVisible = showNavigationBar,

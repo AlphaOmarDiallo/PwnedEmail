@@ -3,6 +3,7 @@ package com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation
 import androidx.lifecycle.viewModelScope
 import com.alphaomardiallo.pawnedemail.common.domain.model.Breach
 import com.alphaomardiallo.pawnedemail.common.domain.model.Email
+import com.alphaomardiallo.pawnedemail.common.domain.model.ErrorEntity
 import com.alphaomardiallo.pawnedemail.common.domain.util.ResponseD
 import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.EmptyBreachesUseCase
@@ -55,13 +56,20 @@ class GetAllBreachesViewModel @Inject constructor(
     fun getBreaches(email: String) {
         getAllBreachesUseCase.invoke(email = email).onEach { result ->
             when (result) {
-                is ResponseD.Error -> _uiState.update { state -> state.copy(isLoading = false) }
+                is ResponseD.Error -> _uiState.update { state ->
+                    if (result.error == ErrorEntity.NotFound) {
+                        withContext(Dispatchers.IO) {
+                            emptyBreachesUseCase.invoke()
+                            saveEmail(Email(email = email))
+                        }
+                    }
+                    state.copy(isLoading = false)
+                }
+
                 is ResponseD.Loading -> _uiState.update { state -> state.copy(isLoading = true) }
                 is ResponseD.Success -> _uiState.update { state ->
                     withContext(Dispatchers.IO) {
-
                         emptyBreachesUseCase.invoke()
-
                         saveEmail(Email(email = email))
 
                         val breachList = result.data ?: emptyList()
@@ -72,7 +80,7 @@ class GetAllBreachesViewModel @Inject constructor(
                         state.copy(breaches = breachList, isLoading = false)
                     }
                 }
-                }
+            }
         }.launchIn(viewModelScope)
     }
 
