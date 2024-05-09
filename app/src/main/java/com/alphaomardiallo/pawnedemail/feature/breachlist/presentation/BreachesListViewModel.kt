@@ -32,8 +32,12 @@ class BreachesListViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             getListOfBreaches.invoke().collect { breachList ->
-                getEmail()
-                _uiState.update { it.copy(breaches = breachList, lastEmailUsed = getEmail()) }
+                _uiState.update { state ->
+                    state.copy(
+                        breaches = breachList.sortedByDescending { it.breachDate },
+                        lastEmailUsed = getEmail()
+                    )
+                }
             }
         }
     }

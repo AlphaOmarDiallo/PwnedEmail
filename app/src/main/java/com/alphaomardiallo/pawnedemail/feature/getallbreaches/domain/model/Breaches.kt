@@ -30,7 +30,7 @@ data class Breaches(
         modifiedDate = this.modifiedDate,
         pwnCount = this.pwnCount,
         description = this.description,
-        logoPath = this.description,
+        logoPath = this.logoPath,
         dataClasses = this.dataClasses,
         isVerified = this.isVerified,
         isFabricated = this.isFabricated,

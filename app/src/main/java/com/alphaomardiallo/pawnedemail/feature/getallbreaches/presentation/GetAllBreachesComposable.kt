@@ -91,7 +91,7 @@ private fun GetAllBreachesComposableContent(
                         color = MaterialTheme.colorScheme.error
                     )
                 },
-                maxLines = 1,
+                singleLine = true,
             )
 
             if (!isLoading) {

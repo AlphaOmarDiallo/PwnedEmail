@@ -28,5 +28,10 @@
         <item quantity="one">%d breach found for %s</item>
         <item quantity="other">%d breaches found for %s</item>
     </plurals>
+    <string name="malware_breach">Data obtained via a malware. One of your device might have been compromised</string>
+    <string name="leaked_data">Leaked data</string>
+    <string name="description">Description</string>
+    <string name="date">Date: </string>
+    <string name="logo_description">Logo of domain affected</string>
 
 </resources>
