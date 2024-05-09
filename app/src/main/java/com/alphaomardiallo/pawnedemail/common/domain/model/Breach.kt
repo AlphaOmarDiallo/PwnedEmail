@@ -43,22 +43,12 @@ data class Breach(
     )
 
     fun toBreachUi() = BreachListUi(
-        name = this.name,
         title = this.title,
         domain = this.domain,
         breachDate = this.breachDate,
-        addedDate = this.addedDate,
-        modifiedDate = this.modifiedDate,
-        pwnCount = this.pwnCount,
         description = this.description,
         logoPath = this.logoPath,
         dataClasses = this.dataClasses,
-        isVerified = this.isVerified,
-        isFabricated = this.isFabricated,
-        isSensitive = this.isSensitive,
-        isRetired = this.isRetired,
-        isSpamList = this.isSpamList,
         isMalware = this.isMalware,
-        isSubscriptionFree = this.isSubscriptionFree
     )
 }

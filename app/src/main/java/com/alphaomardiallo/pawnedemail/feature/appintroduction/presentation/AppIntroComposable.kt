@@ -15,6 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import com.alphaomardiallo.pawnedemail.R
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.mediumPadding
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.smallPadding
 
 @Composable
@@ -30,23 +31,11 @@ private fun AppIntroComposableContent() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(id = R.string.intro_subtitle),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = smallPadding()),
-            style = MaterialTheme.typography.titleLarge.copy(
-                fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colorScheme.secondary
-            ),
-            textAlign = TextAlign.Justify
-        )
-
-        Text(
             text = stringResource(id = R.string.intro_definition),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = smallPadding()),
-            style = MaterialTheme.typography.labelSmall.copy(
+            style = MaterialTheme.typography.labelMedium.copy(
                 color = MaterialTheme.colorScheme.tertiary,
                 fontStyle = FontStyle.Italic
             )
@@ -55,6 +44,18 @@ private fun AppIntroComposableContent() {
         AsyncImage(
             model = R.drawable.safa_data_img,
             contentDescription = stringResource(id = R.string.image_content_description),
+        )
+
+        Text(
+            text = stringResource(id = R.string.intro_subtitle),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = mediumPadding()),
+            style = MaterialTheme.typography.bodyLarge.copy(
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.secondary
+            ),
+            textAlign = TextAlign.Justify
         )
     }
 }
