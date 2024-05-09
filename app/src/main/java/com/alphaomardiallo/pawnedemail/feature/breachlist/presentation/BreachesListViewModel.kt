@@ -1,7 +1,7 @@
 package com.alphaomardiallo.pawnedemail.feature.breachlist.presentation
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
 import com.alphaomardiallo.pawnedemail.feature.breachlist.domain.usecase.GetLastEmailUsed
 import com.alphaomardiallo.pawnedemail.feature.breachlist.domain.usecase.GetListOfBreaches
 import com.alphaomardiallo.pawnedemail.feature.breachlist.presentation.model.BreachListState
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class BreachesListViewModel @Inject constructor(
     private val getListOfBreaches: GetListOfBreaches,
     private val getLastEmailUsed: GetLastEmailUsed,
-) : ViewModel() {
+) : BaseViewModel() {
 
     ///////////////////////////////////////////////////////////////////////////
     // Data

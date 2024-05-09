@@ -7,7 +7,7 @@ import com.alphaomardiallo.pawnedemail.feature.allbreaches.data.remote.api.GetAl
 import com.alphaomardiallo.pawnedemail.feature.allbreaches.domain.model.BreachesRegistered
 import javax.inject.Inject
 
-class AllBreachesRegistered @Inject constructor(
+class AllBreachesRegisteredDataSource @Inject constructor(
     private val api: GetAllBreachesRegisteredApi,
 ) : BaseRemoteDataSource() {
 
