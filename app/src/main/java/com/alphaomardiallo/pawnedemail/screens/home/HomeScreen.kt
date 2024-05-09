@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.largePadding
 import com.alphaomardiallo.pawnedemail.feature.appintroduction.presentation.AppIntroComposable
+import com.alphaomardiallo.pawnedemail.feature.breachlist.presentation.BreachListComposable
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.presentation.GetAllBreachesComposable
 
 @Preview
@@ -23,5 +24,6 @@ fun HomeScreen() {
     ) {
         AppIntroComposable()
         GetAllBreachesComposable()
+        BreachListComposable()
     }
 }

@@ -22,8 +22,9 @@
     <string name="check_button">Pwned?</string>
 
     <!-- Breach list composable -->
-    <string name="no_breach_found">No breach found for %s</string>
+    <string name="no_breach_found">No breach found</string>
     <plurals name="breach_found">
+        <item quantity="zero">No breach found for %s</item>
         <item quantity="one">%d breach found for %s</item>
         <item quantity="other">%d breaches found for %s</item>
     </plurals>
