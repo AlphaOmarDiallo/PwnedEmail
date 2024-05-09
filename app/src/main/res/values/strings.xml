@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pawned Email</string>
+    <string name="app_name">Pwned Email</string>
 
     <!-- Bottom nav route -->
     <string name="bottom_nav_route_home">Home</string>
@@ -10,7 +10,7 @@
     <string name="destination_home_screen">Home screen</string>
 
     <!-- App intro composable -->
-    <string name="intro_title">Have you been pawned?</string>
+    <string name="intro_title">Have you been pwned?</string>
     <string name="intro_subtitle">Check if your email has been in a data breach</string>
     <string name="intro_definition">def: To be Pwned ("owned") is to have been the victim of a data breach</string>
     <string name="intro_title_breaches">%s has been involved in %d breaches</string>
@@ -19,7 +19,7 @@
     <!-- Get all breaches composable -->
     <string name="email_label">Email</string>
     <string name="email_supporting_text_invalid">Invalid email. Check syntax.</string>
-    <string name="check_button">Pawned?</string>
+    <string name="check_button">Pwned?</string>
 
     <!-- Breach list composable -->
     <string name="no_breach_found">No breach found for %s</string>

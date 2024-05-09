@@ -13,33 +13,18 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.alphaomardiallo.pawnedemail.R
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.smallPadding
 
 @Composable
 fun AppIntroComposable() {
-
-    val viewModel: AppIntroViewModel = hiltViewModel()
-    val uiState = viewModel.uiState.collectAsStateWithLifecycle()
-
-    AppIntroComposableContent(
-        breachNumber = uiState.value.breachNumber,
-        viewModel = viewModel
-    )
+    AppIntroComposableContent()
 }
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-private fun AppIntroComposableContent(breachNumber: Int = 2, viewModel: AppIntroViewModel? = null) {
-    val text = if (false) {
-        String.format(stringResource(id = R.string.intro_title_breaches), "alpha", breachNumber)
-    } else {
-        stringResource(id = R.string.intro_title)
-    }
-
+private fun AppIntroComposableContent() {
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -49,7 +34,7 @@ private fun AppIntroComposableContent(breachNumber: Int = 2, viewModel: AppIntro
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = smallPadding()),
-            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.SemiBold),
+            style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.SemiBold),
         )
 
         Text(
@@ -72,8 +57,7 @@ private fun AppIntroComposableContent(breachNumber: Int = 2, viewModel: AppIntro
             style = MaterialTheme.typography.labelSmall.copy(
                 color = MaterialTheme.colorScheme.tertiary,
                 fontStyle = FontStyle.Italic
-            ),
-            textAlign = TextAlign.Justify
+            )
         )
 
         AsyncImage(
