@@ -13,7 +13,6 @@
     <string name="intro_title">Have you been pwned?</string>
     <string name="intro_subtitle">Check if your email has been in a data breach</string>
     <string name="intro_definition">def: To be Pwned ("owned") is to have been the victim of a data breach</string>
-    <string name="intro_title_breaches">%s has been involved in %d breaches</string>
     <string name="image_home_content_description">Illustration of a person holding a padlock, with representation of user data in web windows in the background. Image from https://undraw.co/illustrations.</string>
 
     <!-- Get all breaches composable -->
