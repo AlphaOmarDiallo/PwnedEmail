@@ -3,11 +3,13 @@ package com.alphaomardiallo.pawnedemail.common.presentation.composable
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.alphaomardiallo.pawnedemail.common.presentation.mainactivity.destination.BottomNavDestination
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.greenHighlight
 
 @Composable
 fun MainBottomBar(
@@ -41,7 +43,12 @@ fun MainBottomBar(
                     onClick = {
                         onSelectedItemChange(index)
                         onItemClick(destination.route)
-                    }
+                    },
+                    colors = NavigationBarItemDefaults.colors().copy(
+                        selectedIconColor = greenHighlight,
+                        selectedTextColor = greenHighlight,
+                        selectedIndicatorColor = androidx.compose.ui.graphics.Color.Transparent
+                    )
                 )
             }
         }
