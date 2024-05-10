@@ -1,5 +1,6 @@
 package com.alphaomardiallo.pawnedemail.feature.getallbreaches.data.model
 
+import androidx.annotation.Keep
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.model.Breaches
 import com.squareup.moshi.Json
 
@@ -54,6 +55,7 @@ import com.squareup.moshi.Json
  * @property logoPath A URI that specifies where a logo for the breached service can be found. Logos are
  *                     always in PNG format.
  */
+@Keep
 data class BreachesDto(
     @Json(name = "Name") val name: String,
     @Json(name = "Title") val title: String,

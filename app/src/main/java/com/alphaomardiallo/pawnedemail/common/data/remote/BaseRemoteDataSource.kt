@@ -17,6 +17,8 @@ abstract class BaseRemoteDataSource {
             HttpURLConnection.HTTP_NOT_FOUND -> ErrorEntity.NotFound
             // 405 : HTTP_BAD_METHOD
             HttpURLConnection.HTTP_BAD_METHOD -> ErrorEntity.NotAllowed
+            // 429 : HTTP_TOO_MANY_REQUEST
+            429 -> ErrorEntity.TooManyRequest
             // 500: HTTP_SERVER_ERROR/HTTP_INTERNAL_ERROR
             HttpURLConnection.HTTP_INTERNAL_ERROR -> ErrorEntity.ServerError
             // 503 : HTTP_UNAVAILABLE
