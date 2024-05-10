@@ -1,9 +1,9 @@
 package com.alphaomardiallo.pawnedemail.screens.secure
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.alphaomardiallo.pawnedemail.feature.secure.presentation.SecureComposable
 
 @Composable
 fun SecureScreen() {
-    Text("SECURE")
+    SecureComposable()
 }
