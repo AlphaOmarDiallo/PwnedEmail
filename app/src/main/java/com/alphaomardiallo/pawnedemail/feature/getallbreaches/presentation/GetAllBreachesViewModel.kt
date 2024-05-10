@@ -5,6 +5,7 @@ import com.alphaomardiallo.pawnedemail.common.domain.model.Breach
 import com.alphaomardiallo.pawnedemail.common.domain.model.Email
 import com.alphaomardiallo.pawnedemail.common.domain.model.ErrorEntity
 import com.alphaomardiallo.pawnedemail.common.domain.util.ResponseD
+import com.alphaomardiallo.pawnedemail.common.domain.util.getErrorMessage
 import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.EmptyBreachesUseCase
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.usecase.GetAllBreachesUseCase
@@ -62,11 +63,25 @@ class GetAllBreachesViewModel @Inject constructor(
                             emptyBreachesUseCase.invoke()
                             saveEmail(Email(email = email))
                         }
+
+                        state.copy(isLoading = false, isError = false, errorMessage = null)
+                    } else {
+                        state.copy(
+                            isLoading = false,
+                            isError = true,
+                            errorMessage = getErrorMessage(result.error)
+                        )
                     }
-                    state.copy(isLoading = false)
                 }
 
-                is ResponseD.Loading -> _uiState.update { state -> state.copy(isLoading = true) }
+                is ResponseD.Loading -> _uiState.update { state ->
+                    state.copy(
+                        isLoading = true,
+                        isError = false,
+                        errorMessage = null
+                    )
+                }
+
                 is ResponseD.Success -> _uiState.update { state ->
                     withContext(Dispatchers.IO) {
                         emptyBreachesUseCase.invoke()
@@ -77,7 +92,12 @@ class GetAllBreachesViewModel @Inject constructor(
                             saveBreach(breach.toBreach())
                         }
 
-                        state.copy(breaches = breachList, isLoading = false)
+                        state.copy(
+                            breaches = breachList,
+                            isLoading = false,
+                            isError = false,
+                            errorMessage = null
+                        )
                     }
                 }
             }

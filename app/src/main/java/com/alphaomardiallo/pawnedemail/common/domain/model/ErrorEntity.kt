@@ -7,6 +7,8 @@ sealed class ErrorEntity {
 
     data object Unauthorized : ErrorEntity()
 
+    data object TooManyRequest : ErrorEntity()
+
     data object AccessDenied : ErrorEntity()
 
     data object NotFound : ErrorEntity()

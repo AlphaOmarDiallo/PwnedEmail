@@ -46,4 +46,15 @@
     <string name="step_two_factor_auth_content_description">Illustration representing two-factor authentication with a laptop connected to the web and a server. Image from https://undraw.co/illustrations.</string>
     <string name="step_two_factor_auth_title">Activate two-factor authentication</string>
     <string name="step_two_factor_auth_text">When possible, activate two-factor authentication.\nIf a hacker gets your email and password, the hacker will not be able to access your account.\nAlso, you will be notified anytime someone tries to log in to your account.</string>
+
+    <!-- Error message manager -->
+    <string name="error_access_denied">Error: Access to the service is denied. Please try again.</string>
+    <string name="error_bad_request">Error: Bad request. Please try again.</string>
+    <string name="error_network">Error: Please check your internet connection and then try again.</string>
+    <string name="error_not_allowed">Error: This request is not allowed. Please try again.</string>
+    <string name="error_not_found">Error: Not found in de database.</string>
+    <string name="error_server_error">Error: Server error, please try later.</string>
+    <string name="error_unauthorized">Error: Unauthorized request. Please try again.</string>
+    <string name="error_unknown">Error: Unknown error. Please try again.</string>
+    <string name="error_too_many_request">Too many request, please try again in 1 second.</string>
 </resources>

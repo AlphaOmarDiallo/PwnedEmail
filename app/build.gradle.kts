@@ -28,7 +28,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -105,6 +106,7 @@ dependencies {
         exclude(group = "com.intellij", module = "annotations")
     }
     kapt(libs.room.compiler)
+    annotationProcessor(libs.room.compiler)
     testImplementation(libs.room.testing)
 
     implementation(libs.gson)
@@ -116,7 +118,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    debugImplementation(libs.squareup.leakcanary)
+    //debugImplementation(libs.squareup.leakcanary)
 }
 
 kapt {

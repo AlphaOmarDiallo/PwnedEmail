@@ -40,7 +40,9 @@ fun GetAllBreachesComposable() {
         email = uiState.value.email,
         breaches = viewModel::getBreaches,
         isLoading = uiState.value.isLoading,
-        updateEmail = viewModel::updateEmailInUiState
+        updateEmail = viewModel::updateEmailInUiState,
+        isError = uiState.value.isError,
+        errorMessage = uiState.value.errorMessage
     )
 }
 
@@ -51,6 +53,8 @@ private fun GetAllBreachesComposableContent(
     breaches: KFunction1<String, Unit>? = null,
     isLoading: Boolean = false,
     updateEmail: KFunction1<String, Unit>? = null,
+    isError: Boolean = false,
+    errorMessage: Int? = null,
 ) {
 
     Card(
@@ -103,6 +107,13 @@ private fun GetAllBreachesComposableContent(
                 }
             } else {
                 CircularProgressIndicator()
+            }
+
+            if (isError && errorMessage != null) {
+                Text(
+                    text = stringResource(id = errorMessage),
+                    color = MaterialTheme.colorScheme.error
+                )
             }
 
             LaunchedEffect(key1 = Unit) {
