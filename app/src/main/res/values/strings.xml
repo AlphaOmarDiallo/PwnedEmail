@@ -39,4 +39,12 @@
     <string name="count">Pwned count: %d</string>
     <string name="image_loading_content_description">Illustration of a person next to a giant smartphone loading data. Image from https://undraw.co/illustrations.</string>
 
+    <!-- Secure steps -->
+    <string name="secure_image_content_description">Image showing a men next to a secure browser window. Image from https://undraw.co/illustrations.</string>
+    <string name="step_password_content_description">Illustration representing a human looking at a password. Image from https://undraw.co/illustrations.</string>
+    <string name="step_password_title">Secure your passwords</string>
+    <string name="step_password_text">Change your password on the implicated domain.\nIf this couple\'s email and password are used on other domains, change them.\nTo simplify things, you can use a password manager to get unique passwords for each domain.</string>
+    <string name="step_two_factor_auth_content_description">Illustration representing two-factor authentication with a laptop connected to the web and a server. Image from https://undraw.co/illustrations.</string>
+    <string name="step_two_factor_auth_title">Activate two-factor authentication</string>
+    <string name="step_two_factor_auth_text">When possible, activate two-factor authentication.\nIf a hacker gets your email and password, the hacker will not be able to access your account.\nAlso, you will be notified anytime someone tries to log in to your account.</string>
 </resources>
