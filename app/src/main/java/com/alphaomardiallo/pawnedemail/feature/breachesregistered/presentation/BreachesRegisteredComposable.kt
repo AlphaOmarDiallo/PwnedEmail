@@ -29,6 +29,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -41,6 +42,7 @@ import coil.compose.AsyncImage
 import com.alphaomardiallo.pawnedemail.R
 import com.alphaomardiallo.pawnedemail.common.presentation.composable.DotsFlashingLoader
 import com.alphaomardiallo.pawnedemail.common.presentation.composable.LinkedText
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.greenHighlight
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.largePadding
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.smallPadding
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.xSmallPadding
@@ -171,8 +173,8 @@ private fun BreachCard(breach: BreachesRegisteredUi) {
                 Image(
                     imageVector = if (!expanded) Icons.Default.KeyboardArrowDown else Icons.Default.KeyboardArrowUp,
                     contentDescription = if (!expanded) Icons.Default.KeyboardArrowDown.name else Icons.Default.KeyboardArrowUp.name,
-                    modifier = Modifier
-                        .clickable { expanded = !expanded }
+                    modifier = Modifier.clickable { expanded = !expanded },
+                    colorFilter = ColorFilter.tint(greenHighlight)
                 )
             }
             CardSpacer()
