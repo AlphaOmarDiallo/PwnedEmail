@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.daggerHiltAndroidPlugin)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     alias(libs.plugins.jetbrainskotlinkapt)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
     //alias(libs.plugins.kspPlugin)
 }
 
@@ -27,6 +29,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+        }
+
         release {
             isMinifyEnabled = true
             isShrinkResources = true
@@ -78,6 +84,8 @@ dependencies {
 
     implementation(libs.dagger.hilt.android)
     implementation(libs.dagger.hilt.nav.compose)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
     kapt(libs.dagger.hilt.compiler)
     testImplementation(libs.dagger.hilt.android.testing)
     testAnnotationProcessor(libs.dagger.hilt.compiler)
