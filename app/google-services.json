@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "845725433017",
+    "project_id": "pwnedapp-a315c",
+    "storage_bucket": "pwnedapp-a315c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845725433017:android:d7c264d3d838e65d69af68",
+        "android_client_info": {
+          "package_name": "com.alphaomardiallo.pawnedemail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaPxq8h031fGuM18jCzXnfNuGhNscH0oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845725433017:android:d8ddf27e0cbff8cc69af68",
+        "android_client_info": {
+          "package_name": "com.alphaomardiallo.pawnedemail.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaPxq8h031fGuM18jCzXnfNuGhNscH0oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
