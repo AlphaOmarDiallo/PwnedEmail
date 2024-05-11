@@ -16,5 +16,8 @@ buildscript {
     dependencies {
         classpath(libs.googleGradleSecret)
         classpath(libs.navigation)
+        classpath(libs.gradle)
+        classpath(libs.google.services)
+        classpath(libs.firebase.crashlytics.gradle)
     }
 }
