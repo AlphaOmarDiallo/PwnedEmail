@@ -61,7 +61,22 @@ Folders inside the app package are organized like this:
 * Database : Room
 * Image loading : Coil
 * Logs : Timber
+* Monitoring : Firebase Analytics and Crashlytics
 
 ## Test
 There are no test at the moment. Unit test will be done soon. 
 The app UI is manually tested following a task list.
+
+## Analysis and quality
+Analysis and quality are monitored with Firebase. To get access, please contact me. 
+The Pwned App project contains two app : 
+* Pwned App : for the release app with the id com.alphaomardiallo.pawnedemail
+* Pwned App debug : for the debug app with the id com.alphaomardiallo.pawnedemail.debug
+* 
+### Analysis
+Firebase analytics is used to get data about users interactions with the app.
+An event logging plan will be tailored soon.
+
+### Quality
+All the crashes are monitored and treated in Firebase. Whenever a crash is fixed in release, ths issue is closed and the PR is added in comment.
+For the debug app, there isn't really a strict policy. 
