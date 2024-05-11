@@ -75,7 +75,22 @@ The Pwned App project contains two app :
 
 ### Analysis
 Firebase analytics is used to get data about users interactions with the app.
-An event logging plan will be tailored soon.
+
+#### Screen View
+
+When accessed, all screens will send an even with a tag name.
+
+#### Feature search breaches for an account
+
+* When search is clicked
+* If search is successful
+* If search returns error
+
+#### Feature get all breaches
+
+* When loading starts
+* If search is successful
+* If search returns error
 
 ### Quality
 All the crashes are monitored and treated in Firebase. Whenever a crash is fixed in release, ths issue is closed and the PR is added in comment.
