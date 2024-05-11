@@ -1,17 +1,17 @@
 package com.alphaomardiallo.pawnedemail
 
 import android.app.Application
-import com.google.firebase.Firebase
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.analytics
+import com.alphaomardiallo.pawnedemail.common.domain.usecase.analytics.InitAnalyticsUseCase
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 import timber.log.Timber
 import timber.log.Timber.Forest.plant
 
 @HiltAndroidApp
 class PawnedEmailApplication : Application() {
 
-    private lateinit var analytics: FirebaseAnalytics
+    @Inject
+    lateinit var initAnalyticsUseCase: InitAnalyticsUseCase
 
     override fun onCreate() {
         super.onCreate()
@@ -20,6 +20,6 @@ class PawnedEmailApplication : Application() {
             plant(Timber.DebugTree())
         }
 
-        analytics = Firebase.analytics
+        initAnalyticsUseCase.invoke()
     }
 }

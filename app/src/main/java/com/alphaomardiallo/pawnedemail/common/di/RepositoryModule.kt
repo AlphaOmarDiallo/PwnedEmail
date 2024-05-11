@@ -2,8 +2,10 @@ package com.alphaomardiallo.pawnedemail.common.di
 
 import com.alphaomardiallo.pawnedemail.common.data.local.dao.BreachesDao
 import com.alphaomardiallo.pawnedemail.common.data.local.dao.EmailDao
+import com.alphaomardiallo.pawnedemail.common.data.repository.AnalyticsRepositoryImp
 import com.alphaomardiallo.pawnedemail.common.data.repository.BreachRepositoryImp
 import com.alphaomardiallo.pawnedemail.common.data.repository.EmailRepositoryImp
+import com.alphaomardiallo.pawnedemail.common.domain.repository.AnalyticsRepository
 import com.alphaomardiallo.pawnedemail.common.domain.repository.BreachRepository
 import com.alphaomardiallo.pawnedemail.common.domain.repository.EmailRepository
 import com.alphaomardiallo.pawnedemail.feature.breachesregistered.data.remote.datasource.AllBreachesRegisteredDataSource
@@ -44,4 +46,8 @@ class RepositoryModule {
         allBreachesRegisteredDataSource: AllBreachesRegisteredDataSource,
     ): AllBreachesRegisteredRepository =
         AllBreachesRegisteredRepositoryImp(allBreachesRegisteredDataSource)
+
+    @Provides
+    @Singleton
+    fun provideAnalyticsRepository(): AnalyticsRepository = AnalyticsRepositoryImp()
 }

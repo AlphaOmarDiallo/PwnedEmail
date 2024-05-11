@@ -8,8 +8,19 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
 
+    ///////////////////////////////////////////////////////////////////////////
+    // Data
+    ///////////////////////////////////////////////////////////////////////////
+
     @Inject
     lateinit var appNavigator: AppNavigator
+
+    //@Inject
+    //lateinit var logScreenViewUseCase: LogScreenViewUseCase
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Navigation
+    ///////////////////////////////////////////////////////////////////////////
 
     /**
      * Initiates a navigation back action in the application.
@@ -52,4 +63,18 @@ abstract class BaseViewModel : ViewModel() {
             )
         }
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Analytics
+    ///////////////////////////////////////////////////////////////////////////
+
+    /*fun logScreenView(screenName: String) {
+        viewModelScope.launch {
+            try {
+                logScreenViewUseCase.invoke(screenName)
+            } catch (e:UninitializedPropertyAccessException){
+                Timber.e(e.localizedMessage)
+            }
+        }
+    }*/
 }
