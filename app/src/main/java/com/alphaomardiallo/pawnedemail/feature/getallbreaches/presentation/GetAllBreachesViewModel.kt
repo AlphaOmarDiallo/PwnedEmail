@@ -4,6 +4,9 @@ import androidx.lifecycle.viewModelScope
 import com.alphaomardiallo.pawnedemail.common.domain.model.Breach
 import com.alphaomardiallo.pawnedemail.common.domain.model.Email
 import com.alphaomardiallo.pawnedemail.common.domain.model.ErrorEntity
+import com.alphaomardiallo.pawnedemail.common.domain.usecase.analytics.LogErrorSearchEventUseCase
+import com.alphaomardiallo.pawnedemail.common.domain.usecase.analytics.LogSearchEventUseCase
+import com.alphaomardiallo.pawnedemail.common.domain.usecase.analytics.LogSuccessfulSearchEventUseCase
 import com.alphaomardiallo.pawnedemail.common.domain.util.ResponseD
 import com.alphaomardiallo.pawnedemail.common.domain.util.getErrorMessage
 import com.alphaomardiallo.pawnedemail.common.presentation.base.BaseViewModel
@@ -31,6 +34,9 @@ class GetAllBreachesViewModel @Inject constructor(
     private val saveEmailUseCase: SaveEmailUseCase,
     private val getEmailUseCase: GetUserEmailUseCase,
     private val emptyBreachesUseCase: EmptyBreachesUseCase,
+    private val logSearchEventUseCase: LogSearchEventUseCase,
+    private val logSuccessfulSearchEventUseCase: LogSuccessfulSearchEventUseCase,
+    private val logErrorSearchEventUseCase: LogErrorSearchEventUseCase,
 ) : BaseViewModel() {
 
     ///////////////////////////////////////////////////////////////////////////
@@ -55,6 +61,8 @@ class GetAllBreachesViewModel @Inject constructor(
     }
 
     fun getBreaches(email: String) {
+        logSearchEventUseCase.invoke()
+
         getAllBreachesUseCase.invoke(email = email).onEach { result ->
             when (result) {
                 is ResponseD.Error -> _uiState.update { state ->
@@ -64,8 +72,12 @@ class GetAllBreachesViewModel @Inject constructor(
                             saveEmail(Email(email = email))
                         }
 
+                        logSuccessfulSearchEventUseCase.invoke(0)
+
                         state.copy(isLoading = false, isError = false, errorMessage = null)
                     } else {
+                        logErrorSearchEventUseCase.invoke(result.error ?: ErrorEntity.Unknown)
+
                         state.copy(
                             isLoading = false,
                             isError = true,
@@ -91,6 +103,8 @@ class GetAllBreachesViewModel @Inject constructor(
                         breachList.map { breach ->
                             saveBreach(breach.toBreach())
                         }
+
+                        logSuccessfulSearchEventUseCase.invoke(breachList.size)
 
                         state.copy(
                             breaches = breachList,

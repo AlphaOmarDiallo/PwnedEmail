@@ -79,9 +79,11 @@ class MainActivity : ComponentActivity() {
         composable(route = BottomNavDestination.Home.route) {
             HomeScreen()
         }
+
         composable(route = BottomNavDestination.Secure.route) {
             SecureScreen()
         }
+
         composable(route = BottomNavDestination.Breaches.route) {
             BreachesScreen()
         }
