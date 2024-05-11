@@ -72,7 +72,7 @@ Analysis and quality are monitored with Firebase. To get access, please contact 
 The Pwned App project contains two app : 
 * Pwned App : for the release app with the id com.alphaomardiallo.pawnedemail
 * Pwned App debug : for the debug app with the id com.alphaomardiallo.pawnedemail.debug
-* 
+
 ### Analysis
 Firebase analytics is used to get data about users interactions with the app.
 An event logging plan will be tailored soon.
