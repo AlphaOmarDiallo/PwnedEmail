@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -38,6 +39,8 @@ class MainActivity : ComponentActivity() {
             BottomNavDestination.Breaches,
             BottomNavDestination.Secure
         )
+
+        installSplashScreen()
 
         setContent {
             val navController = rememberNavController()
