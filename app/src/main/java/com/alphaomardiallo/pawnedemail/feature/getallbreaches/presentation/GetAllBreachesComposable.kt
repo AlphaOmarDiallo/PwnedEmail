@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toLowerCase
@@ -56,6 +57,7 @@ private fun GetAllBreachesComposableContent(
     isError: Boolean = false,
     errorMessage: Int? = null,
 ) {
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     Card(
         modifier = Modifier
@@ -100,7 +102,10 @@ private fun GetAllBreachesComposableContent(
 
             if (!isLoading) {
                 Button(
-                    onClick = { breaches?.invoke(textValueEmail.toLowerCase(locale = Locale.current)) },
+                    onClick = {
+                        breaches?.invoke(textValueEmail.toLowerCase(locale = Locale.current))
+                        keyboardController?.hide()
+                    },
                     enabled = EmailValidator.isValidEmail(textValueEmail)
                 ) {
                     Text(text = stringResource(id = R.string.check_button))
