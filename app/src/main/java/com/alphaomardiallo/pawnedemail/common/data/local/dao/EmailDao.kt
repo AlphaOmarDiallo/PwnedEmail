@@ -14,4 +14,8 @@ interface EmailDao {
 
     @Query("SELECT * FROM email_table LIMIT 1")
     fun getFirstEmail(): Flow<EmailEntity?>
+
+    /** Used only for test */
+    @Query("DELETE FROM breaches_table")
+    fun nukeBreachesTable()
 }
