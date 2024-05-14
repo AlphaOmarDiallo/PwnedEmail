@@ -56,5 +56,5 @@
     <string name="error_server_error">Error: Server error, please try later.</string>
     <string name="error_unauthorized">Error: Unauthorized request. Please try again.</string>
     <string name="error_unknown">Error: Unknown error. Please try again.</string>
-    <string name="error_too_many_request">Too many request, please try again in 1 second.</string>
+    <string name="error_too_many_request">Too many requests, please try again in 1 second.</string>
 </resources>
