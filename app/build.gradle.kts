@@ -87,7 +87,7 @@ dependencies {
     implementation(libs.dagger.hilt.nav.compose)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    implementation(libs.firebase.messaging)
     kapt(libs.dagger.hilt.compiler)
     kaptAndroidTest(libs.dagger.hilt.compiler)
     testImplementation(libs.dagger.hilt.android.testing)
