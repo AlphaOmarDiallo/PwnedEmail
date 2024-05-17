@@ -3,11 +3,11 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.daggerHiltAndroidPlugin)
+    alias(libs.plugins.googleFirebaseFirebasePerf)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
-    alias(libs.plugins.jetbrainskotlinkapt)
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
-    //alias(libs.plugins.kspPlugin)
+    alias(libs.plugins.jetbrainskotlinkapt)
 }
 
 android {
@@ -87,6 +87,7 @@ dependencies {
     implementation(libs.dagger.hilt.nav.compose)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.perf)
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     kapt(libs.dagger.hilt.compiler)
     kaptAndroidTest(libs.dagger.hilt.compiler)
