@@ -6,6 +6,10 @@ import retrofit2.http.GET
 
 interface GetAllBreachesRegisteredApi {
 
-    @GET("breaches")
+    @GET(BASE_URL_ALL_BREACHES)
     suspend fun getAllBreaches(): ApiResponse<List<AllBreachesDto>>
+
+    companion object {
+        const val BASE_URL_ALL_BREACHES = "breaches"
+    }
 }
