@@ -136,7 +136,10 @@ dependencies {
 }
 
 kapt {
+    correctErrorTypes = true
+    useBuildCache = true
     arguments {
         arg("room.schemaLocation", "$projectDir/schemas")
+        arg("kapt.kotlin.generated", "${project.projectDir}/generated/source/kapt/kotlin")
     }
 }
