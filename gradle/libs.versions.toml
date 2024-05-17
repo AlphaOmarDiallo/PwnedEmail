@@ -29,6 +29,9 @@ googleServices = "4.4.1"
 firebaseCrashlyticsGradle = "2.9.9"
 firebaseAnalytics = "22.0.0"
 truth = "1.4.2"
+firebasePerf = "21.0.0"
+googleFirebaseFirebasePerf = "1.4.2"
+googleGmsGoogleServices = "4.4.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -77,6 +80,7 @@ google-services = { group = "com.google.gms", name = "google-services", version.
 firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -84,3 +88,5 @@ jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "k
 jetbrainskotlinkapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 daggerHiltAndroidPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kspPlugin = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+googleFirebaseFirebasePerf = { id = "com.google.firebase.firebase-perf", version.ref = "googleFirebaseFirebasePerf" }
+googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }

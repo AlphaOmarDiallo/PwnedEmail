@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.daggerHiltAndroidPlugin) apply false
     alias(libs.plugins.jetbrainskotlinkapt) apply false
+    alias(libs.plugins.googleFirebaseFirebasePerf) apply false
+    alias(libs.plugins.googleGmsGoogleServices) apply false
     //alias(libs.plugins.kspPlugin) apply false
 }
 
