@@ -13,9 +13,13 @@ interface GetAllBreachesHIBPApi {
      * If the account is found in a breach, it will return HTTP200 response with a body.
      * If the account is not found in a breach, it will return HTTP404 showing it could not be found.
      */
-    @GET("breachedaccount/{account}")
+    @GET(URL_BREACHED_ACCOUNT)
     suspend fun getAllBreachesHIBP(
         @Path("account") emailAddress: String,
         @Query("truncateResponse") truncateResponse: Boolean = false
     ): ApiResponse<List<BreachesDto>>
+
+    companion object {
+        const val URL_BREACHED_ACCOUNT = "breachedaccount/{account}"
+    }
 }
