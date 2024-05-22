@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pwned Email</string>
+    <string name="app_name" translatable="false">Pwned Email</string>
 
     <!-- Bottom nav route -->
     <string name="bottom_nav_route_home">Home</string>
@@ -7,7 +7,7 @@
     <string name="bottom_nav_route_secure">Secure</string>
 
     <!-- Home screen destination -->
-    <string name="destination_home_screen">Home screen</string>
+    <string name="destination_home_screen" translatable="false">Home screen</string>
 
     <!-- App intro composable -->
     <string name="intro_title">Have you been pwned?</string>
@@ -16,9 +16,9 @@
     <string name="image_home_content_description">Illustration of a person holding a padlock, with representation of user data in web windows in the background. Image from https://undraw.co/illustrations.</string>
 
     <!-- Get all breaches composable -->
-    <string name="email_label">Email</string>
+    <string name="email_label" translatable="false">Email</string>
     <string name="email_supporting_text_invalid">Invalid email. Check syntax.</string>
-    <string name="check_button">Pwned?</string>
+    <string name="check_button" translatable="false">Pwned?</string>
     <string name="not_breaches_found">No breaches found for this email</string>
 
     <!-- Breach list composable -->
@@ -43,10 +43,10 @@
     <string name="secure_image_content_description">Image showing a men next to a secure browser window. Image from https://undraw.co/illustrations.</string>
     <string name="step_password_content_description">Illustration representing a human looking at a password. Image from https://undraw.co/illustrations.</string>
     <string name="step_password_title">Secure your passwords</string>
-    <string name="step_password_text">Change your password on the implicated domain.\nIf this couple\'s email and password are used on other domains, change them.\nTo simplify things, you can use a password manager to get unique passwords for each domain.</string>
+    <string name="step_password_text">Change your password on the implicated domain. If this couple\'s email and password are used on other domains, change them. To simplify things, you can use a password manager to get unique passwords for each domain.</string>
     <string name="step_two_factor_auth_content_description">Illustration representing two-factor authentication with a laptop connected to the web and a server. Image from https://undraw.co/illustrations.</string>
     <string name="step_two_factor_auth_title">Activate two-factor authentication</string>
-    <string name="step_two_factor_auth_text">When possible, activate two-factor authentication.\nIf a hacker gets your email and password, the hacker will not be able to access your account.\nAlso, you will be notified anytime someone tries to log in to your account.</string>
+    <string name="step_two_factor_auth_text">When possible, activate two-factor authentication. If a hacker gets your email and password, the hacker will not be able to access your account. Also, you will be notified anytime someone tries to log in to your account.</string>
 
     <!-- Error message manager -->
     <string name="error_access_denied">Error: Access to the service is denied. Please try again.</string>
