@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottom_nav_route_home">Maison</string>
+    <string name="bottom_nav_route_breaches">Violations</string>
+    <string name="bottom_nav_route_secure">Sécurisez</string>
+    <string name="intro_title">Avez-vous été pwned ?</string>
+    <string name="intro_subtitle">Vérifiez si votre e-mail a fait l\'objet d\'une violation de données</string>
+    <string name="intro_definition">Être Pwned (possédé), c\'est avoir été victime d\'une violation de données</string>
+    <string name="image_home_content_description">Illustration d\'une personne tenant un cadenas, avec représentation des données utilisateur dans des fenêtres Web en arrière-plan. Image de https://undraw.co/illustrations.</string>
+    <string name="email_supporting_text_invalid">Email invalide. Vérifiez la syntaxe.</string>
+    <string name="no_breach_found">Aucune violation trouvée</string>
+    <string name="malware_breach">Données obtenues via un malware. L\'un de vos appareils a peut-être été compromis</string>
+    <string name="leaked_data">Données divulguées</string>
+    <string name="description">Description</string>
+    <string name="date">Date:</string>
+    <string name="logo_description">Logo du domaine concerné</string>
+    <string name="loading">Chargement</string>
+    <string name="count">Nombre de fuite: %d</string>
+    <string name="image_loading_content_description">Illustration d’une personne à côté d’un smartphone géant chargeant des données. Image de https://undraw.co/illustrations.</string>
+    <string name="secure_image_content_description">Image montrant un homme à côté d’une fenêtre de navigateur sécurisée. Image de https://undraw.co/illustrations.</string>
+    <string name="step_password_content_description">Illustration représentant un humain regardant un mot de passe. Image de https://undraw.co/illustrations.</string>
+    <string name="step_password_title">Sécurisez vos mots de passe</string>
+    <string name="step_password_text">Changez votre mot de passe sur le domaine concerné. Si l\'email et le mot de passe de ce couple sont utilisés sur d\'autres domaines, modifiez-les. Pour simplifier les choses, vous pouvez utiliser un gestionnaire de mots de passe pour obtenir des mots de passe uniques pour chaque domaine.</string>
+    <string name="step_two_factor_auth_content_description">Illustration représentant l\'authentification à deux facteurs avec un ordinateur portable connecté au web et un serveur. Image de https://undraw.co/illustrations.</string>
+    <string name="step_two_factor_auth_title">Activer l\'authentification à deux facteurs</string>
+    <string name="step_two_factor_auth_text">Lorsque cela est possible, activez l’authentification à deux facteurs. Si un pirate informatique obtient votre e-mail et votre mot de passe, il ne pourra pas accéder à votre compte. De plus, vous serez averti chaque fois que quelqu\'un tentera de se connecter à votre compte.</string>
+    <string name="error_access_denied">Erreur : L\'accès au service est refusé. Veuillez réessayer.</string>
+    <string name="error_bad_request">Erreur : demande incorrecte. Veuillez réessayer.</string>
+    <string name="error_network">Erreur : Veuillez vérifier votre connexion Internet, puis réessayer.</string>
+    <string name="error_not_allowed">Erreur : Cette demande n\'est pas autorisée. Veuillez réessayer.</string>
+    <string name="error_not_found">Erreur : introuvable dans la base de données.</string>
+    <string name="error_server_error">Erreur : erreur de serveur, veuillez réessayer plus tard.</string>
+    <string name="error_unauthorized">Erreur : demande non autorisée. Veuillez réessayer.</string>
+    <string name="error_unknown">Erreur : erreur inconnue. Veuillez réessayer.</string>
+    <string name="error_too_many_request">Trop de demandes, veuillez réessayer dans 1 seconde.</string>
+    <string name="not_breaches_found">Aucune violation trouvée pour cet e-mail</string>
+    <plurals name="breach_found">
+        <item quantity="zero">Aucune violation trouvée pour %s</item>
+        <item quantity="one">%d violation trouvée pour %s</item>
+        <item quantity="other">%d violations trouvées pour %s</item>
+    </plurals>
+</resources>
