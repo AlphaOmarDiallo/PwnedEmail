@@ -16,6 +16,6 @@ interface EmailDao {
     fun getFirstEmail(): Flow<EmailEntity?>
 
     /** Used only for test */
-    @Query("DELETE FROM breaches_table")
-    fun nukeBreachesTable()
+    @Query("DELETE FROM email_table")
+    fun nukeEmailTable()
 }

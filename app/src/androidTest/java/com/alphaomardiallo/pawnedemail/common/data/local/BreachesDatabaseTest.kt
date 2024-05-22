@@ -34,16 +34,16 @@ class BreachesDatabaseTest {
     fun init() {
         hiltRule.inject()
 
-        // Clean DB
+        // Clean DB before each test
         breachesDao.nukeBreachesTable()
-        emailDao.nukeBreachesTable()
+        emailDao.nukeEmailTable()
     }
 
     @After
     fun tearDown() {
-        // Clean DB
+        // Clean DB after each test
         breachesDao.nukeBreachesTable()
-        emailDao.nukeBreachesTable()
+        emailDao.nukeEmailTable()
     }
 
     @Test
