@@ -8,4 +8,5 @@ data class GetAlBreachesUiState(
     val email: String = "",
     val isError: Boolean = false,
     @StringRes val errorMessage: Int? = null,
+    val isNotBreached: Boolean = false,
 )
