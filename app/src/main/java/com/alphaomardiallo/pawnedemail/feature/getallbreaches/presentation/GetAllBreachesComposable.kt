@@ -11,7 +11,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -20,12 +19,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toLowerCase
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.alphaomardiallo.pawnedemail.R
+import com.alphaomardiallo.pawnedemail.common.presentation.theme.greenHighlight
 import com.alphaomardiallo.pawnedemail.common.presentation.theme.mediumPadding
 import com.alphaomardiallo.pawnedemail.feature.getallbreaches.domain.validator.EmailValidator
 import kotlin.reflect.KFunction1
@@ -43,7 +44,8 @@ fun GetAllBreachesComposable() {
         isLoading = uiState.value.isLoading,
         updateEmail = viewModel::updateEmailInUiState,
         isError = uiState.value.isError,
-        errorMessage = uiState.value.errorMessage
+        errorMessage = uiState.value.errorMessage,
+        isNotBreached = uiState.value.isNotBreached
     )
 }
 
@@ -56,6 +58,7 @@ private fun GetAllBreachesComposableContent(
     updateEmail: KFunction1<String, Unit>? = null,
     isError: Boolean = false,
     errorMessage: Int? = null,
+    isNotBreached: Boolean = false,
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
 
@@ -117,12 +120,17 @@ private fun GetAllBreachesComposableContent(
             if (isError && errorMessage != null) {
                 Text(
                     text = stringResource(id = errorMessage),
-                    color = MaterialTheme.colorScheme.error
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold)
                 )
             }
 
-            LaunchedEffect(key1 = Unit) {
-                textValueEmail = email
+            if (isNotBreached) {
+                Text(
+                    text = stringResource(id = R.string.not_breaches_found),
+                    color = greenHighlight,
+                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold)
+                )
             }
         }
     }

@@ -19,6 +19,7 @@
     <string name="email_label">Email</string>
     <string name="email_supporting_text_invalid">Invalid email. Check syntax.</string>
     <string name="check_button">Pwned?</string>
+    <string name="not_breaches_found">No breaches found for this email</string>
 
     <!-- Breach list composable -->
     <string name="no_breach_found">No breach found</string>
