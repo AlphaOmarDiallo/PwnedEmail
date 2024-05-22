@@ -74,14 +74,20 @@ class GetAllBreachesViewModel @Inject constructor(
 
                         logSuccessfulSearchEventUseCase.invoke(0)
 
-                        state.copy(isLoading = false, isError = false, errorMessage = null)
+                        state.copy(
+                            isLoading = false,
+                            isError = false,
+                            errorMessage = null,
+                            isNotBreached = true
+                        )
                     } else {
                         logErrorSearchEventUseCase.invoke(result.error ?: ErrorEntity.Unknown)
 
                         state.copy(
                             isLoading = false,
                             isError = true,
-                            errorMessage = getErrorMessage(result.error)
+                            errorMessage = getErrorMessage(result.error),
+                            isNotBreached = false
                         )
                     }
                 }
@@ -90,7 +96,8 @@ class GetAllBreachesViewModel @Inject constructor(
                     state.copy(
                         isLoading = true,
                         isError = false,
-                        errorMessage = null
+                        errorMessage = null,
+                        isNotBreached = false
                     )
                 }
 
@@ -110,7 +117,8 @@ class GetAllBreachesViewModel @Inject constructor(
                             breaches = breachList,
                             isLoading = false,
                             isError = false,
-                            errorMessage = null
+                            errorMessage = null,
+                            isNotBreached = false
                         )
                     }
                 }
