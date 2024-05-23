@@ -32,6 +32,7 @@ truth = "1.4.2"
 firebasePerf = "21.0.0"
 googleFirebaseFirebasePerf = "1.4.2"
 googleGmsGoogleServices = "4.4.1"
+mockk = "1.13.11"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -81,6 +82,7 @@ firebase-crashlytics-gradle = { group = "com.google.firebase", name = "firebase-
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 firebase-perf = { group = "com.google.firebase", name = "firebase-perf", version.ref = "firebasePerf" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
