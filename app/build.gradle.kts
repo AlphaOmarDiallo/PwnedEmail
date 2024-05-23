@@ -133,6 +133,7 @@ dependencies {
     //debugImplementation(libs.squareup.leakcanary)
     testImplementation(libs.truth)
     androidTestImplementation(libs.truth)
+    testImplementation(libs.mockk)
 }
 
 kapt {
