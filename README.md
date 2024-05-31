@@ -1,5 +1,8 @@
 # Pwned Email
+[![en_badge_web_generic](https://github.com/AlphaOmarDiallo/PwnedEmail/assets/73855044/5a6067f0-5552-46d7-afb6-c78ccc52d0d5)](https://play.google.com/store/apps/details?id=com.alphaomardiallo.pawnedemail&hl=fr)
+
 Definition : To be Pwned ("owned") is to have been the victim of a data breach
+
 ## Purpose of the app
 This app allows it's users to check, wether or not there email has been in a data breach, check all the known data breach and learn how to protect yourself.
 
